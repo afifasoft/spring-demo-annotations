@@ -2,17 +2,20 @@ package com.alakesoftware.springdemoannotations;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.alakesoftware.springdemoannotations.service.Coach;
 
-
+// 86
 @SpringBootApplication
 public class SpringDemoAnnotationsApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringDemoAnnotationsApplication.class, args);
 	
+		
+	/* xml config
 		// read spring config file
 			ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 		// get the bean from spring container
@@ -33,6 +36,19 @@ public class SpringDemoAnnotationsApplication {
 		System.out.println("\nMemory locaation for alphaCoach: "+ alphaCoach);
 		// close the context
 		context.close();
+		
+		*/
+		
+		/* Annotations config */
+		
+		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SportConfig.class);
+		
+		Coach coach = context.getBean("tennisCoach", Coach.class);
+		
+		System.out.println(coach.getDailyWorkout());
+		
+		System.out.println(coach.getDailyFortune());
+		
 	}
 
 }
