@@ -23,6 +23,14 @@ public class SpringDemoAnnotationsApplication {
 		
 		// call method to get the daily fortune
 		System.out.println(coach.getDailyFortune());
+		
+		Coach alphaCoach = context.getBean("tennisCoach", Coach.class);
+		
+		boolean result = (coach == alphaCoach);
+		
+		System.out.println("\nPointing to the same object: "+result);
+		System.out.println("\nMemory location for coach: "+ coach );
+		System.out.println("\nMemory locaation for alphaCoach: "+ alphaCoach);
 		// close the context
 		context.close();
 	}
