@@ -6,8 +6,9 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.alakesoftware.springdemoannotations.service.Coach;
+import com.alakesoftware.springdemoannotations.service.impl.SwimCoach;
 
-// 86
+// 92
 @SpringBootApplication
 public class SpringDemoAnnotationsApplication {
 
@@ -43,12 +44,21 @@ public class SpringDemoAnnotationsApplication {
 		
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SportConfig.class);
 		
-		Coach coach = context.getBean("tennisCoach", Coach.class);
+//		Coach coach = context.getBean("tennisCoach", Coach.class);
+//		
+//		System.out.println(coach.getDailyWorkout());
+//		
+//		System.out.println(coach.getDailyFortune());
+//		
 		
-		System.out.println(coach.getDailyWorkout());
+		SwimCoach swimCoach = context.getBean("swimCoach", SwimCoach.class);
 		
-		System.out.println(coach.getDailyFortune());
+		System.out.println(swimCoach.getDailyWorkout());
+		System.out.println(swimCoach.getDailyFortune());
 		
+		// call our new swim coach methods ... has the prop values injected
+		System.out.println("email: "+swimCoach.getEmail() );
+		System.out.println("team: "+swimCoach.getTeam());
 	}
 
 }
