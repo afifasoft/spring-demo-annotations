@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html xmlns:th="https://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/my-test.css}"/> 
+<script th:src="@{/js/simple-test.js}"></script>
+<meta charset="UTF-8"> 
+<title>Spring MVC Demo</title>
 </head>
 <body>
 	Hello World of Spring!
-	<br/>
-	<br/>
-	student name: ${param.studentName}
+	<br>
+	<br>
+	student name: <p th:text="${studentName}">
+	<br>
+	<br>
+	<p th:text="${message}" />
 </body>
 </html>
