@@ -11,10 +11,11 @@
 		Last Name: <input type="text" name="lastName" /><br><br>
 		Country:  
 			<select name="country">
-				<option value="Brazil">Brazil</option>
-				<option value="France">France</option>
-				<option value="Germany">Germany</option>
-				<option value="India">India</option>
+				<option th:each="entry: ${theCountryOptions}"
+					th:value="${entry.key}"
+					th:utext="${entry.value}"
+				></option>
+				
 			</select><br><br>
 		<input type="submit" value="Submit" />
 		
