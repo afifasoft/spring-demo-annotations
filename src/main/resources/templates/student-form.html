@@ -11,12 +11,25 @@
 		Last Name: <input type="text" name="lastName" /><br><br>
 		Country:  
 			<select name="country">
-				<option th:each="entry: ${theCountryOptions}"
+				<option th:each="entry: ${student.countryOptions}"
 					th:value="${entry.key}"
 					th:utext="${entry.value}"
 				></option>
 				
 			</select><br><br>
+		Favorite Language:<br><br>
+		<ul>
+		<li th:each="ty: ${student.favoriteLanguageOptions}">
+			<input type="radio" name="favoriteLanguage" th:value="${ty.key}" th:utext="${ty.value}"/>
+		</li>
+		</ul>
+		<br><br>
+		Operating Systems: <br><br>
+		Linux: <input type="checkbox" name="operatingSystems" value="Linux"/>
+		Mac OS: <input type="checkbox" name="operatingSystems" value="Mac OS"/>
+		MS Windows: <input type="checkbox" name="operatingSystems" value="Windows"/><br><br>
+		
+			
 		<input type="submit" value="Submit" />
 		
 	</form>

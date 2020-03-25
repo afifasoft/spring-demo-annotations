@@ -10,5 +10,13 @@
 	FirstName: <p th:text="${student.firstName}"/>
 	LastName: <p th:text="${student.lastName}"/>
 	country: <p th:text=${student.country}/>
+	Favorite Language: <p th:text=${student.favoriteLanguage}/>
+	Operating Systems: 
+		
+		
+		<ul >
+			<li th:each="operting: ${student.operatingSystems}" th:text="${operting}">
+			</li>
+		</ul>
 </body>
 </html>
