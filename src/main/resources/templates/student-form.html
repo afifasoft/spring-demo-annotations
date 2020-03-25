@@ -9,6 +9,13 @@
 	<form action="processForm" th:object="${student}">
 		First Name: <input type="text" name="firstName"/><br><br>
 		Last Name: <input type="text" name="lastName" /><br><br>
+		Country:  
+			<select name="country">
+				<option value="Brazil">Brazil</option>
+				<option value="France">France</option>
+				<option value="Germany">Germany</option>
+				<option value="India">India</option>
+			</select><br><br>
 		<input type="submit" value="Submit" />
 		
 	</form>
