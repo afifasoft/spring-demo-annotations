@@ -9,9 +9,10 @@
 	<h2>Customer Form </h2>
 	<form action="processForm" th:object="${customer}">
 		
-		First Name: <input type="text" name="firstName" /><br>
+		First Name: <input type="text" name="firstName" /><br><br>
 		Last Name (*): <input type="text" name="lastName" th:field="*{lastName}"/><br><br>
-		
+		Free Passes: <input type="text" name="freePasses"/><br><br>
+		Postal Code: <input type="text" name="postalCode"/>
 		<input type="submit" value="Submit"/>
 	</form>
 	
